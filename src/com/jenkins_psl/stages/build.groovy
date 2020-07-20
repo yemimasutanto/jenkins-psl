@@ -1,5 +1,5 @@
 #!/usr/bin/groovy
-package com.jenkins_psl
+package com.jenkins_psl.stages
 
 import com.jenkins_psl.Pipeline
 import com.jenkins_psl.Config
