@@ -1,8 +1,8 @@
 #!/usr/bin/groovy
 package com.jenkins_psl
 
-import com.workshop.Pipeline
-import com.workshop.Config
+import com.jenkins_psl.Pipeline
+import com.jenkins_psl.Config
 
 def build(Pipeline p) {
     c = new Config()
