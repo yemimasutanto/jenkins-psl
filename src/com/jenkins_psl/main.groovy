@@ -13,6 +13,7 @@ def main(script) {
     u = new utils()
 
     sprebuild = new prebuild()
+    sbuild = new build()
 
     // Pipeline specific variable get from injected env
     // Mandatory variable wil be check at details & validation steps
@@ -52,9 +53,9 @@ def main(script) {
             sprebuild.checkoutBuildTest(p)
         }
 
-        // stage('Build & Push Image') {
-        //     sbuild.build(p)
-        // }
+        stage('Build & Push Image') {
+            sbuild.build(p)
+        }
 
         // stage('Merge') {
         //     withCredentials([usernamePassword(credentialsId: 'dimasmamot-github-personal', passwordVariable: 'git_token', usernameVariable: 'git_username')]) {
