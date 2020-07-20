@@ -15,6 +15,7 @@ def main(script) {
     sprebuild = new prebuild()
     sbuild = new build()
     spostbuild = new postbuild()
+    sdeploy = new deploy()
 
     // Pipeline specific variable get from injected env
     // Mandatory variable wil be check at details & validation steps
@@ -67,12 +68,13 @@ def main(script) {
                 // Kalau gagal jangan lanjut
             
             println "Want to merge blowart?"
-            spostbuild(p)
+            println "Anggep aja udah di merge oke!"
+            // spostbuild(p)
         }
 
-        // stage('Deploy') {
-        //     sdeploy.deploy(p)
-        // }
+        stage('Deploy') {
+            sdeploy.deploy(p)
+        }
 
         // stage('Service Healthcheck') {
         //     spostdeploy.healthcheck(p)
