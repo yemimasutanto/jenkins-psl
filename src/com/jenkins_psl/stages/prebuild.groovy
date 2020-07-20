@@ -40,6 +40,7 @@ def checkoutBuildTest(Pipeline p) {
     withCredentials([usernamePassword(credentialsId: 'personal-token', passwordVariable: 'git_token', usernameVariable: 'git_username')]) {
         println "============\u001b[44mCommencing PR Checkout\u001b[0m============"
         println "\u001b[36mChecking out from : \u001b[0mpull/${p.pr_num}/head:pr/${p.pr_num}..."
+        println "My git username ${git_username}"
         sh "git config --global user.name '${git_username}'"
         sh "git config --global user.email '${git_username}@example.com'"
         // sh "git clone https://github.com/dennystw/tkpd-demo.git /var/jenkins_home/workspace/blowart"
