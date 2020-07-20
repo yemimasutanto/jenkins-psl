@@ -2,6 +2,8 @@
 package com.jenkins_psl
 
 import com.jenkins_psl.Config
+import com.jenkins_psl.stages.*
+import com.jenkins_psl.utils
 
 def main(script) {
     println "Hello blowart"
