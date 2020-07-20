@@ -16,6 +16,7 @@ def main(script) {
     sbuild = new build()
     spostbuild = new postbuild()
     sdeploy = new deploy()
+    spostdeploy = new postdeploy()
 
     // Pipeline specific variable get from injected env
     // Mandatory variable wil be check at details & validation steps
@@ -76,9 +77,9 @@ def main(script) {
             sdeploy.deploy(p)
         }
 
-        // stage('Service Healthcheck') {
-        //     spostdeploy.healthcheck(p)
-        // }
+        stage('Service Healthcheck') {
+            spostdeploy.healthcheck(p)
+        }
     }
 }
 return this
