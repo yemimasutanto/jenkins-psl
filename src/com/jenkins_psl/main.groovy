@@ -65,8 +65,9 @@ def main(script) {
                 // Kalau belum check apa merge nya udah berhasil atau ngga
                 // Kalau berhasil lanjut deploy
                 // Kalau gagal jangan lanjut
-            }
+            
             println "Want to merge blowart?"
+            spostbuild(p)
         }
 
         // stage('Deploy') {
