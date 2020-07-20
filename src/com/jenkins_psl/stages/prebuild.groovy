@@ -41,9 +41,10 @@ def checkoutBuildTest(Pipeline p) {
         println "============\u001b[44mCommencing PR Checkout\u001b[0m============"
         println "\u001b[36mChecking out from : \u001b[0mpull/${p.pr_num}/head:pr/${p.pr_num}..."
         println "My git username ${git_username}"
+        git branch: "${p.branch_name}", url: "https://github.com/${p.git_user}/${p.repository_name}.git"
         sh "git config --global user.name '${git_username}'"
         sh "git config --global user.email '${git_username}@example.com'"
-        sh "git clone https://github.com/dennystw/tkpd-demo.git /var/jenkins_home/workspace/blowart &> /dev/null || true"
+        // sh "git clone https://github.com/dennystw/tkpd-demo.git /var/jenkins_home/workspace/blowart &> /dev/null || true"
         // sh "git init /var/jenkins_home/workspace/blowart"
         sh "git branch -D pr/${p.pr_num} &> /dev/null || true"
         sh "git fetch origin pull/${p.pr_num}/head:pr/${p.pr_num}"
@@ -52,7 +53,7 @@ def checkoutBuildTest(Pipeline p) {
 
     docker.withTool("${c.default_docker_jenkins_tool}") {
 
-        git branch: "${p.branch_name}", url: "https://github.com/${p.git_user}/${p.repository_name}.git"
+        // git branch: "${p.branch_name}", url: "https://github.com/${p.git_user}/${p.repository_name}.git"
 
         def golangImage = docker.image("${c.default_golang_base_image}")
         golangImage.inside("-u 0") {
