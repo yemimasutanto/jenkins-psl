@@ -1,5 +1,5 @@
 #!/usr/bin/groovy
-package com.workshop
+package com.jenkins_psl
 
 def checkValidation(LinkedHashMap m){
     def overall_validation = true
