@@ -14,6 +14,7 @@ def main(script) {
 
     sprebuild = new prebuild()
     sbuild = new build()
+    spostbuild = new postbuild()
 
     // Pipeline specific variable get from injected env
     // Mandatory variable wil be check at details & validation steps
@@ -57,15 +58,16 @@ def main(script) {
             sbuild.build(p)
         }
 
-        // stage('Merge') {
-        //     withCredentials([usernamePassword(credentialsId: 'dimasmamot-github-personal', passwordVariable: 'git_token', usernameVariable: 'git_username')]) {
-        //         // Check pr merged atau belum dari variable is_merged
-        //         // Kalau sudah langsung deploy
-        //         // Kalau belum check apa merge nya udah berhasil atau ngga
-        //         // Kalau berhasil lanjut deploy
-        //         // Kalau gagal jangan lanjut
-        //     }
-        // }
+        stage('Merge') {
+            // withCredentials([usernamePassword(credentialsId: 'dimasmamot-github-personal', passwordVariable: 'git_token', usernameVariable: 'git_username')]) {
+                // Check pr merged atau belum dari variable is_merged
+                // Kalau sudah langsung deploy
+                // Kalau belum check apa merge nya udah berhasil atau ngga
+                // Kalau berhasil lanjut deploy
+                // Kalau gagal jangan lanjut
+            }
+            println "Want to merge blowart?"
+        }
 
         // stage('Deploy') {
         //     sdeploy.deploy(p)
