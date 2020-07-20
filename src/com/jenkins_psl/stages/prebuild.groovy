@@ -43,7 +43,7 @@ def checkoutBuildTest(Pipeline p) {
         println "My git username ${git_username}"
         sh "git config --global user.name '${git_username}'"
         sh "git config --global user.email '${git_username}@example.com'"
-        sh "git clone https://github.com/dennystw/tkpd-demo.git /var/jenkins_home/workspace/blowart"
+        sh "git clone https://github.com/dennystw/tkpd-demo.git /var/jenkins_home/workspace/blowart &> /dev/null || true"
         // sh "git init /var/jenkins_home/workspace/blowart"
         sh "git branch -D pr/${p.pr_num} &> /dev/null || true"
         sh "git fetch origin pull/${p.pr_num}/head:pr/${p.pr_num}"
