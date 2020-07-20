@@ -2,5 +2,5 @@
 package com.jenkins_psl
 
 def main(script) {
-    println 
+    println "Hello blowart"
 }
