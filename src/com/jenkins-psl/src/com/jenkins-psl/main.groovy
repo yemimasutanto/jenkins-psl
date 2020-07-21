@@ -1,5 +1,5 @@
 package com.jenkins-psl
 
 def main(){
-    println "Halo gay!``"
+    println "Halo gay!"
 }
