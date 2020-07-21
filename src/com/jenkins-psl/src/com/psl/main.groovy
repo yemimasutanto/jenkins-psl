@@ -1,5 +1,5 @@
 #!/usr/bin/groovy
-package com.jenkins-psl
+package com.psl
 
 def main(script) {
     println "Hello gay!"
