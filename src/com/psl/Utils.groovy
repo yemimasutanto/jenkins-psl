@@ -2,14 +2,13 @@
 package com.psl
 
 def checkValidation(LinkedHashMap m){
-def overall_validation = true
-m.each {
-    if (!it['value']['status']) {
-        println "${it['value']['error_message']}"
-        overall_validation = overall_validation && it['value']['status']
+    def overall_validation = true
+    m.each {
+        if (!it['value']['status']) {
+            println "${it['value']['error_message']}"
+            overall_validation = overall_validation && it['value']['status']
+        }
     }
+    return overall_validation
 }
-return overall_validation
-}
-
 return this
