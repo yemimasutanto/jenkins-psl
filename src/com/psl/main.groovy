@@ -10,6 +10,7 @@ def main(script) {
     c = new Config()
     u = new Utils()
     sprebuild = new prebuild()
+    sbuild = new build()
 
     // Pipeline specific variable get from injected env
     // Mandatory variable will be check at details & validation steps
@@ -18,6 +19,9 @@ def main(script) {
     def git_user = ("${script.env.git_user}" != "null") ? "${script.env.git_user}" : ""
     def app_port = ("${script.env.app_port}" != "null") ? "${script.env.app_port}" : ""
     def pr_num = ("${script.env.pr_num}" != "null") ? "${script.env.pr_num}" : ""
+
+    // Have default value
+    def docker_registry = ("${script.env.docker_registry}" != "null") ? "${script.env.docker_registry}" : "${c.default_docker_registry}"
 
     //Initialize docker tool
     def dockerTool = tool name: 'docker', type: 'dockerTool'
@@ -29,7 +33,8 @@ def main(script) {
         git_user,
         app_port,
         pr_num,
-        dockerTool
+        dockerTool,
+        docker_registry
     )
 
     ansiColor('xterm') {
@@ -45,9 +50,9 @@ def main(script) {
             sprebuild.checkoutBuildTest(p)
         }
 
-        // stage('Build & Push Image') {
-        //     // TODO: Call build & push image function
-        // }
+        stage('Build & Push Image') {
+            sbuild.build(p)
+        }
 
         // stage('Merge') {
         //     // TODO: Call merge function
