@@ -5,7 +5,7 @@ import com.psl.Config
 
 def main(script) {
     // Object initialization
-    // c = new Config()
+    c = new Config()
 
     // Pipeline specific variable get from injected env
     // Mandatory variable will be check at details & validation steps
