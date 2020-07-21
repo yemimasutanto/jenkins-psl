@@ -1,3 +1,5 @@
 #!/usr/bin/groovy
 
-println "Hello jenkins-psl"
+def main() {
+    print "Hello jenkins-psl!"
+}
