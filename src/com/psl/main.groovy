@@ -2,6 +2,7 @@
 package com.psl
 
 import com.psl.Config
+import com.psl.utils
 
 def main(script) {
     // Object initialization
@@ -19,7 +20,7 @@ def main(script) {
 
     //Initialize docker tool
     def dockerTool = tool name: 'docker', type: 'dockerTool'
-    
+
     // Pipeline object
     p = new Pipeline(
         repository_name,
