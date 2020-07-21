@@ -2,13 +2,13 @@
 package com.psl
 
 import com.psl.Config
-import com.psl.utils
 import com.psl.stages.*
+import com.psl.utils
 
 def main(script) {
     // Object initialization
     c = new Config()
-    u = new utils()
+    u = new Utils()
     sprebuild = new prebuild()
 
     // Pipeline specific variable get from injected env
