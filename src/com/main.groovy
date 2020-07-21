@@ -1,7 +1,7 @@
 #!/usr/bin/groovy
-package com.workshop
+package com.psl
 
-import com.workshop.Config
+import com.psl.Config
 
 def main(script) {
     // Object initialization
