@@ -8,6 +8,7 @@ class Pipeline {
     String git_user
     String app_port
     String pr_num
+    String timeout_hc
     String dockerTool
     String docker_registry
 
@@ -17,6 +18,7 @@ class Pipeline {
         String git_user,
         String app_port,
         String pr_num,
+        String timeout_hc,
         String dockerTool,
         String docker_registry
     ) {
@@ -25,6 +27,7 @@ class Pipeline {
         this.git_user = git_user
         this.app_port = app_port
         this.pr_num = pr_num
+        this.timeout_hc = timeout_hc
         this.dockerTool = dockerTool
         this.docker_registry = docker_registry
     }

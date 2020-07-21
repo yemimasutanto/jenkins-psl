@@ -36,6 +36,7 @@ def main(script) {
         git_user,
         app_port,
         pr_num,
+        timeout_hc,
         dockerTool,
         docker_registry
     )
