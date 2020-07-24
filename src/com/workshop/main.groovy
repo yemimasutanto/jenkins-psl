@@ -1,7 +1,7 @@
 #!/usr/bin/groovy
-package com.psl
+package com.workshop
 
-import com.psl.Config
+import com.workshop.Config
 import com.workshop.stages.*
 import com.workshop.Utils
 
